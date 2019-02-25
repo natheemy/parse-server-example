@@ -11,11 +11,7 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
-var pushConfig = {};
 
-if (process.env.FCM_API_KEY) {
-    pushConfig['android'] = { apiKey: process.env.FCM_API_KEY || 'AAAAf-retz0:APA91bF6yLhCIl8pmDNSHY-99_7gjrWsxAHnGdwN6Z4vHwvy4EjV_zjhl-AqE6v3-_qMIxZqbiSurWtlbH_5LgjI55vZqqCD3Tld_khq5jJASUM-yb5jiGMxm6Zdz2ZRAa6eiRxDDnE-'};
-}
 
 
 
@@ -29,7 +25,7 @@ var api = new ParseServer({
     android:{
       senderId: '549401311037',
       apiKey: 'AIzaSyC2F0Ovfgt1spTdjM90hg4kGAw8eQHjuM4'
-    }}
+    }},
   liveQuery: {
     classNames: ["Conversations", "Employees", "Messages"] // List of classes to support for query subscriptions
   },
