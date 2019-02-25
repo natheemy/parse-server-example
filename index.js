@@ -23,7 +23,7 @@ var api = new ParseServer({
   
     push: JSON.parse(process.env.PARSE_SERVER_PUSH || "{"android": {
         "senderId": "549401311037",
-        "apiKey": "AAAAf-retz0:APA91bF6yLhCIl8pmDNSHY-99_7gjrWsxAHnGdwN6Z4vHwvy4EjV_zjhl-AqE6v3-_qMIxZqbiSurWtlbH_5LgjI55vZqqCD3Tld_khq5jJASUM-yb5jiGMxm6Zdz2ZRAa6eiRxDDnE-"
+        "apiKey": "AIzaSyC2F0Ovfgt1spTdjM90hg4kGAw8eQHjuM4"
     }}"), //Add this
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
