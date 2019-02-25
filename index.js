@@ -21,10 +21,12 @@ var api = new ParseServer({
     classNames: ["Conversations", "Employees", "Messages"] // List of classes to support for query subscriptions
   },
   
-    push: JSON.parse(process.env.PARSE_SERVER_PUSH || "{"android": {
+    push: JSON.parse(process.env.PARSE_SERVER_PUSH || "{"android":
+                     {
         "senderId": "549401311037",
-        "apiKey": "AIzaSyC2F0Ovfgt1spTdjM90hg4kGAw8eQHjuM4"
-    }}"), //Add this
+        "apiKey": "AIzaSyC2F0Ovfgt1spTdjM90hg4kGAw8eQHjuM4",
+    }
+                     }"), //Add this
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
