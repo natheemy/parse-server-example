@@ -19,7 +19,12 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'https://bingochat.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Conversations", "Employees", "Messages"] // List of classes to support for query subscriptions
-  }
+  },
+  
+    push: JSON.parse(process.env.PARSE_SERVER_PUSH || "{"android": {
+        "senderId": "549401311037",
+        "apiKey": "AAAAf-retz0:APA91bF6yLhCIl8pmDNSHY-99_7gjrWsxAHnGdwN6Z4vHwvy4EjV_zjhl-AqE6v3-_qMIxZqbiSurWtlbH_5LgjI55vZqqCD3Tld_khq5jJASUM-yb5jiGMxm6Zdz2ZRAa6eiRxDDnE-"
+    }}"), //Add this
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
