@@ -11,15 +11,25 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
+var pushConfig = {};
+
+if (process.env.FCM_API_KEY) {
+    pushConfig['android'] = { apiKey: process.env.FCM_API_KEY || 'AAAAf-retz0:APA91bF6yLhCIl8pmDNSHY-99_7gjrWsxAHnGdwN6Z4vHwvy4EjV_zjhl-AqE6v3-_qMIxZqbiSurWtlbH_5LgjI55vZqqCD3Tld_khq5jJASUM-yb5jiGMxm6Zdz2ZRAa6eiRxDDnE-'};
+}
+
+
+
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://<dbuser>:<dbpassword>@ds219055.mlab.com:19055/heroku_dq4w1w1n',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || '123456',
   masterKey: process.env.MASTER_KEY || '123456', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'https://bingochat.herokuapp.com/parse',  // Don't forget to change to https if needed
+  push: pushConfig,
   liveQuery: {
     classNames: ["Conversations", "Employees", "Messages"] // List of classes to support for query subscriptions
   },
+  
   
 
 });
